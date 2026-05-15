@@ -8,7 +8,7 @@ public class BuiltInExceptionDemo {
 
         // TODO: Use try/catch to handle division by zero.
         // Expected friendly message example: Cannot divide by zero.
-
+        
         // TODO: Use try/catch to handle an invalid alert index.
         // Purposely try an out-of-range index so the catch block runs.
         // Expected friendly message example: Invalid alert index.
