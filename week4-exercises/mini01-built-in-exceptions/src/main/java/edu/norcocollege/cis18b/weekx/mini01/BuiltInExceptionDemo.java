@@ -8,10 +8,26 @@ public class BuiltInExceptionDemo {
 
         // TODO: Use try/catch to handle division by zero.
         // Expected friendly message example: Cannot divide by zero.
-        
+        try
+        {
+            int result = numerator/denominator;
+            System.out.println("Result: "+ result);
+        }
+        catch (ArithmeticException ex)
+        {
+            System.out.println("Cannot Divide by Zero");
+        }
+
         // TODO: Use try/catch to handle an invalid alert index.
         // Purposely try an out-of-range index so the catch block runs.
         // Expected friendly message example: Invalid alert index.
+        try{
+            String alert = alerts[4];
+            System.out.println("Alert: " + alert);
+        } catch (ArrayIndexOutOfBoundsException ex)
+        {
+            System.out.println("Invalid alert index");
+        }
 
         System.out.println("Program completed.");
     }
