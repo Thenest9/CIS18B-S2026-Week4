@@ -1,1 +1,10 @@
-TODO: Replace this text with your debugging notes.
+1. What the bug was?
+An ArrayIndexOutOfBoundsException occured because of an off-by-one error. The loop condition used "<=" instead of "<",
+which forced the program to try to reach an index 3 of a 3 length array, where the indexs are 0,1,2
+
+2. How you found it?
+I launched the program in debug mode and placed a breakpoint on the print statement inside the loop to monitor each iterartion of the 
+loop. when the variable "i" incremented to 3, the error occured. 
+
+3. What change fixed it?
+Changing the loop condition from "<=" to "<."
