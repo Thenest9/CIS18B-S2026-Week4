@@ -6,6 +6,12 @@ public class DecoratorApp {
 
         // TODO: Create a BasicAlertHandler.
         // TODO: Wrap it in LoggingAlertHandlerDecorator.
-        // TODO: Handle the alert.
+        // TODO: Handle the alert
+
+        AlertHandler handler = new BasicAlertHandler();
+        handler = new LoggingAlertHandlerDecorator(handler);
+        
+        handler.handle(alert);
+
     }
 }
