@@ -14,5 +14,16 @@ public class AlertService {
         // TODO: Validate the alert.
         // TODO: Save the alert.
         // TODO: Wrap unexpected errors in AlertProcessingException.
+        
+        try{
+            validator.validate(alert);
+            repository.save(alert);
+        } catch(InvalidAlertException | AlertStorageException ex)
+        {
+            throw ex;
+        }catch(Exception ex)
+        {
+            throw new AlertProcessingException("An unexpected problem occured", ex);
+        }
     }
 }
