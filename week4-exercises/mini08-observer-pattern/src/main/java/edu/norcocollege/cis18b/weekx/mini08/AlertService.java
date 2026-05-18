@@ -8,10 +8,15 @@ public class AlertService {
 
     public void addObserver(AlertObserver observer) {
         // TODO: Add the observer to the list.
+        this.observers.add(observer);
     }
 
     public void processAlert(Alert alert) {
         System.out.println("Processing alert: " + alert.message());
         // TODO: Notify all observers.
+        for(AlertObserver observer : observers)
+        {
+            observer.onAlert(alert);
+        }
     }
 }

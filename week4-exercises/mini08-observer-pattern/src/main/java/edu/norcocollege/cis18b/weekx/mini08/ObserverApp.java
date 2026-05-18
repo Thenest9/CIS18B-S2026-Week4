@@ -6,5 +6,12 @@ public class ObserverApp {
 
         // TODO: Register at least two observers.
         // TODO: Process one alert.
+        service.addObserver(new EmailAlertObserver());
+        service.addObserver(new LogAlertObserver());
+
+        Alert systemAlert = new Alert(5, "High CPU Detected", AlertLevel.CRITICAL);
+
+        service.processAlert(systemAlert);
+
     }
 }
