@@ -5,5 +5,18 @@ public class AlertValidator {
         // TODO: Throw if alert is null.
         // TODO: Throw if message is null or blank.
         // TODO: Throw if level is null.
+
+        if(alert==null)
+        {
+            throw new InvalidAlertException("Alert cannot be null");
+        }
+        if (alert.message()==null || alert.message().isBlank())
+        {
+            throw new InvalidAlertException("Alert message cannot be null or blank");
+        }
+        if(alert.level()==null)
+        {
+            throw new InvalidAlertException("Alert level cannot be null");
+        }
     }
 }

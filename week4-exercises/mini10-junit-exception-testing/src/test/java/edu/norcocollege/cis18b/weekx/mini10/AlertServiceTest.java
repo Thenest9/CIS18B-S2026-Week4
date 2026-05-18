@@ -13,7 +13,8 @@ public class AlertServiceTest {
 
         // TODO: Process the alert.
         // TODO: Assert that one alert was stored.
-        assertEquals(1, 0);
+        service.processAlert(alert);
+        assertEquals(1, service.getAlertCount());
     }
 
     @Test
@@ -22,6 +23,6 @@ public class AlertServiceTest {
         Alert alert = new Alert(2, "Disk failure", AlertLevel.CRITICAL);
 
         // TODO: Replace null with a lambda that calls processAlert(alert).
-        assertThrows(AlertStorageException.class, null);
+        assertThrows(AlertStorageException.class, () -> service.processAlert(alert));
     }
 }
